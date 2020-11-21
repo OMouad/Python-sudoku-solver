@@ -1,4 +1,4 @@
-for x in range(0,len(Grid)):
+for x in range(0, len(Grid)):
     for y in range(0, len(Grid[x])):
         if Grid[x]
 
@@ -28,7 +28,29 @@ def verifyUnderGrid(grid, row, col, num):
                 condition = False
     return condition
 
+
 def verifyValid(grid, row, col, num):
-    condition = verifyCol(grid, col, num) and verifyUnderGrid(
-        grid, row, col, num) and verifyRow(grid, row, num)
+    condition = False
+    if grid[row][col] == 0:
+        condition = verifyCol(grid, col, num) and verifyUnderGrid(
+            grid, row, col, num) and verifyRow(grid, row, num)
     return (condition)
+
+
+
+def showGrid(grid):
+    print("   ", end="")
+    col = 0
+    while col < len(grid):
+        print(col, end="  ")
+        col += 1
+    print()
+    row = 0
+    while row < len(grid):
+        print(row, end="")
+        col = 0
+        while col < len(grid[row]):
+            print(" ", grid[row][col], end="")
+            col += 1
+        print()
+        row += 1
