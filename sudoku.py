@@ -73,14 +73,16 @@ def verifyWin(grid):
     return condition
 
 
-grid = [[0, 0, 3, 0, 0, 7, 0, 6, 0],
-        [0, 0, 7, 8, 0, 0, 2, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 3, 0],
-        [0, 0, 0, 0, 5, 0, 0, 0, 1],
-        [0, 0, 5, 4, 0, 8, 3, 7, 9],
-        [0, 3, 0, 2, 7, 9, 6, 4, 0],
-        [5, 0, 0, 0, 0, 0, 0, 0, 3],
-        [0, 7, 6, 3, 9, 4, 0, 0, 0],
-        [0, 0, 4, 0, 0, 5, 0, 8, 0]]
+print("Enter the numbers with a space between each column.")
+print("One row per line, and a blank line at the end.")
+grid = []
+while True:
+    ligne = input()
+    if not ligne:
+        break
+    valeurs = ligne.split()
+    rangee = [int(val) for val in valeurs]
+    grid.append(rangee)
+
 showGrid(grid)
 solve(grid)
